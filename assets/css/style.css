@@ -71,10 +71,11 @@ label {
     padding: 2%;
     margin-top: 15%;
     font-size: 21px;
+    color: azure
 }
 
 .up {
-    color:blue;
+    color:rgb(237, 237, 237);
 }
 
 .timeRemain {
@@ -97,6 +98,7 @@ body .container {
     border-radius: 5px;
     padding-left: 10px;
     padding-right: 10px;
+    
 }
 
 .questions {

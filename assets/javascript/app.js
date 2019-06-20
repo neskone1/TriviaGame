@@ -2,23 +2,23 @@ var questions = [{
     
     ques: "What nationality was Picasso?",
     ans: ["Spanish", "Chinese", "American", "Canadian"],
-    name: "Picasso",
+    name: "picasso",
     correct: "Spanish",
-    divClass: ".Picasso"
+    divClass: ".picasso"
 },
 {
     ques: "English artist Andy Brown created a portrait of Queen Elizabeth II using what?",
     ans: ["Bubblegum", "Tea Bags", "Fish Bones", "Socks"],
-    name: "Andy Brown",
+    name: "andy",
     correct: "Tea Bags",
-    divClass: ".Andy"
+    divClass: ".andy"
 },
 {
     ques: "How many paintings did Vincent Van Gogh sell during his lifetime?",
     ans: ["842", "27", "1", "192"],
-    name: "Van",
+    name: "van",
     correct: "1",
-    divClass: ".vanGogh"
+    divClass: ".van"
 },
 {
     ques: "What painter was summoned to Rome in 1481 to decorate the walls of the Sistine Chapel?",
@@ -43,8 +43,8 @@ questionDisplay();
 // function for displaying questions
 var questionDisplay = function() {
 $(".questions :not('#sub-but')").empty();
-// loops through the 10 questions 
-for (var j = 0; j < 10; j++) {
+// loops through the 4questions 
+for (var j = 0; j < 4; j++) {
 $('.questions').prepend('<div class="' + questions[j].name + '"></div>');
 $(questions[j].divClass).append('<div class ="ques-title">' + questions[j].ques + '</div>');
 // loops through answers for each radio button
@@ -70,7 +70,7 @@ if (seconds <= 0) {
     var unAnswered = 0;
 
     // loop through correctArray & radioName to match html elements & answers
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 4; i++) {
 
         if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
 
@@ -107,7 +107,7 @@ var wrongAnswers = 0;
 var unAnswered = 0;
 
 // loop through correctArray & radioName to match html elements & answers
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 4; i++) {
 
 if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
 
