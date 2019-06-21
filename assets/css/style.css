@@ -4,6 +4,10 @@ body {
     font-family: 'Anton', sans-serif;
     color: black;
     letter-spacing: 2px;
+    ;
+}
+.container{
+    opacity: 3;
 }
 
 h1 {
@@ -81,6 +85,7 @@ label {
 .timeRemain {
     padding: 2%;
     color: rgb(218, 21, 21);
+    
 }
 
 .timeRemain #time-remain {
