@@ -1,5 +1,5 @@
-var questions = [{
-    
+const questions = [{
+
     ques: "What nationality was Picasso?",
     ans: ["Spanish", "Chinese", "American", "Canadian"],
     name: "picasso",
@@ -27,60 +27,104 @@ var questions = [{
     correct: "SANDRO BOTTICELLI",
     divClass: ".sandro"
 },
+{
+    ques: "Andy Warhol was a Pop Artist. wich of this works is not one of his?",
+    ans: ["Coca-Cola", "Marilyn Monroe", "Elizabeth Taylor", "Rainbow"],
+    name: "warhol",
+    correct: "Rainbow",
+    divClass: ".warhol"
+},
+{
+    ques: "Where was Jean Michael Basquiat from?",
+    ans: ["Haiti", "United States", "France", "Puerto Rico"],
+    name: "basquiat",
+    correct: "SANDRO BOTTICELLI",
+    divClass: ".basquiat"
+},
+{
+    ques: "The landscapes Ross painted were strongly influenced by the time he spent in wich state?",
+    ans: ["Vermont", "Alaska", "Minesota", "Oregon"],
+    name: "ross",
+    correct: "Alaska",
+    divClass: ".ross"
+},
+{
+    ques: "Which of these most accurately describes Dali's style of art?",
+    ans: ["Cubism", "Abstract", "Modernism", "Surrealism"],
+    name: "dali",
+    correct: "Surrealism",
+    divClass: ".dali"
+},
+{
+    ques: "Frida Kahlo began her career as an artist after what?",
+    ans: ["8years old", "50yearsold", "being involved in an accident", "in college"],
+    name: "frida",
+    correct: "being involved in an accident",
+    divClass: ".frida"
+},
+{
+    ques: "Who painted The Mona Lisa?",
+    ans: ["DaVinci", "Klimt", "Picasso", "Andy Warhol"],
+    name: "davinci",
+    correct: "DaVinci",
+    divClass: ".davinci"
+},
 
 ] // Finish Questions //
 
-var labels = ["first", "second", "third", "forth"];
+const labels = ["first", "second", "third", "fourth","fifth","sixth","seventh","eighth","ninth","tenth"];
 
 // click to start then display quesions
-var startGame = $("#start-btn").on('click', function() {
-$(this).parent().hide();
-$('.container').show();
-countdown(60);
-questionDisplay();
+const startGame = $("#start-btn").on('click', function () {
+    $(this).parent().hide();
+    $("#welcomeScreen").hide();
+    $('.container').show();
+    countdown(60);
+    questionDisplay();
 });
 
 // function for displaying questions
-var questionDisplay = function() {
-$(".questions :not('#sub-but')").empty();
-// loops through the 4questions 
-for (var j = 0; j < 4; j++) {
-$('.questions').prepend('<div class="' + questions[j].name + '"></div>');
-$(questions[j].divClass).append('<div class ="ques-title">' + questions[j].ques + '</div>');
-// loops through answers for each radio button
-for (var i = 0; i <= 3; i++) {
-    $(questions[j].divClass).append('<input type="radio"  name="' + questions[j].name + '" value="' + questions[j].ans[i] + '"/><label for="' + labels[i] + '">' + questions[j].ans[i] + '</label>');
-}
-$('.questions').prepend('<hr />');
-}
+let questionDisplay = function () {
+    $(".questions :not('#sub-but')").empty();
+    // loops through the 10 questions 
+    for (var j = 0; j < 10; j++) {
+        $('.questions').prepend('<div class="' + questions[j].name + '"></div>');
+        $(questions[j].divClass).append('<div class ="ques-title">' + questions[j].ques + '</div>');
+        // loops through answers for each radio button
+        for (var i = 0; i <= 3; i++) {
+            $(questions[j].divClass).append('<input type="radio"  name="' + questions[j].name + '" value="' + questions[j].ans[i] + '"/><label for="' + labels[i] + '">' + questions[j].ans[i] + '</label>');
+        }
+        $('.questions').prepend('<hr />');
+    }
 }
 
 
 // function for countdown timer
-var countdown = function(seconds) {
+let countdown = function (seconds) {
 
-var timer = setInterval(function() {
-seconds = seconds - 1;
-$("#time-remain").html(seconds);
+    let timer = setInterval(function () {
+        seconds = seconds - 1;
+        $("#time-remain").html(seconds);
 
-if (seconds <= 0) {
-    $('.container').fadeOut(500);
-    var correctAnswers = 0;
-    var wrongAnswers = 0;
-    var unAnswered = 0;
+        if (seconds <= 0) {
+            $('.container').fadeOut(500);
+            let correctAnswers = 0;
+            let wrongAnswers = 0;
+            
 
-    // loop through correctArray & radioName to match html elements & answers
-    for (var i = 0; i < 4; i++) {
+            // loop through correctArray & radioName to match html elements & answers
+            for (var i = 0; i < 10; i++) {
 
-        if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
+                if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
 
-            correctAnswers++;
-            console.log("this is correct! number:" + i)
-        } else {
-            wrongAnswers++;
-            console.log("this is wrong! number:" + i)
-        };
-    }
+                    correctAnswers++;
+                    console.log("this is correct! number:" + i)
+                } else  {
+                    wrongAnswers++;
+                console.log("this is wrong! number:" + i)
+            }
+         
+    };
     $('#correctTimesUp').append(correctAnswers);
     // display wrongAnswers
     $('#wrongTimesUp').append(wrongAnswers);
@@ -89,32 +133,33 @@ if (seconds <= 0) {
     // alert("Times Up!");
     clearInterval(timer);
     return;
+
 }
 }, 1000);
 
 // click event for submit button to stop timer
-$('#sub-but').on('click', function() {
-clearInterval(timer);
+$('#sub-but').on('click', function () {
+    clearInterval(timer);
 })
 }; // end countdown
 
 
 // function to grade quiz once submit button is clicked
-var gradeQuiz = $('#sub-but').on('click', function() {
+let gradeQuiz = $('#sub-but').on('click', function () {
 
-var correctAnswers = 0;
-var wrongAnswers = 0;
-var unAnswered = 0;
+    let correctAnswers = 0;
+   let wrongAnswers = 0;
+  
 
-// loop through correctArray & radioName to match html elements & answers
-for (var i = 0; i < 4; i++) {
+    // loop through correctArray & radioName to match html elements & answers
+    for (var i = 0; i < 10; i++) {
 
-if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
+        if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
 
-    correctAnswers++;
-} else {
-    wrongAnswers++;
-};
+            correctAnswers++;
+        } else   {
+            wrongAnswers++;
+    };
 };
 
 // once submit is clicked...

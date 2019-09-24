@@ -1,24 +1,33 @@
 
 body {
     background-image: url('../images/background.jpg');
+    
     font-family: 'Anton', sans-serif;
     color: black;
     letter-spacing: 2px;
-    ;
+    
+    
 }
 .container{
     opacity: 3;
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 40px;
     color: black;
+    text-align: center;
+}
+h3{
+    text-align: center;
+    padding-top: 30px;
 }
 
-#splashscreen {
+#welcomeScreen {
     background-image: url('../images/colorful.jpg');
     background-repeat: no-repeat;
-    width: 35%;
+    width: 50%;
+    height: 500px;
+    
     margin: 0 auto;
     border-radius: 5px;
 }
@@ -31,14 +40,15 @@ h1 {
     color: #ffffff;
 }
 
-.splashBox {
+.Box1 {
     margin: 0 auto;
     text-align: center;
     padding: 4%;
     margin-top: 40%;
+    
 }
 
-.splashBox2 {
+.Box2 {
     margin: 0 auto;
     text-align: center;
     padding: 4%;
@@ -126,3 +136,16 @@ header {
     color: #d8d9dc
 }
 
+p{
+    text-align: center;
+}
+#start-btn{
+   
+   text-align: center;
+   width: 100%;
+   
+
+
+    
+   
+}
