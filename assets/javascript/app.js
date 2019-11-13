@@ -28,7 +28,7 @@ const questions = [{
     divClass: ".sandro"
 },
 {
-    ques: "Andy Warhol was a Pop Artist. wich of this works is not one of his?",
+    ques: "Andy Warhol was a Pop Artist. Which of the following works is not one of his?",
     ans: ["Coca-Cola", "Marilyn Monroe", "Elizabeth Taylor", "Rainbow"],
     name: "warhol",
     correct: "Rainbow",
@@ -42,7 +42,7 @@ const questions = [{
     divClass: ".basquiat"
 },
 {
-    ques: "The landscapes Ross painted were strongly influenced by the time he spent in wich state?",
+    ques: "The landscapes Bob Ross painted were strongly influenced by the time he spent in which state?",
     ans: ["Vermont", "Alaska", "Minesota", "Oregon"],
     name: "ross",
     correct: "Alaska",
